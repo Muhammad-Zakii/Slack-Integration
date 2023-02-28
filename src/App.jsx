@@ -1,34 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './App.css';
+import React from 'react';
+import { styled } from '@mui/material';
+
+const SlackButton = styled('a')({
+  position: 'fixed',
+  width: 60,
+  height: 60,
+  bottom: 50,
+  right: 50,
+  borderRadius: 50,
+  textAlign: 'center',
+  fontSize: 30,
+  boxShadow: '2 2 3 #999',
+  zIndex: 100,
+});
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <h1>Slack App integration</h1>
+      <SlackButton
+        href='https://twinhub.slack.com/app_redirect?channel={YOUR SLACK CHANNEL ID}'
+        Add
+        to
+        Slack
+        style={{
+          alignItems: 'center',
+          color: '#000',
+          backgroundColor: '#fff',
+          border: '1px solid #ddd',
+          borderRadius: '36px',
+          display: 'inline-flex',
+          height: '46px',
+          justifyContent: 'center',
+          width: '46px',
+        }}
+      >
+        <svg xmlns='http://www.w3.org/2000/svg' style={{ height: '30px', width: '30px', marginRight: '0' }} viewBox='0 0 122.8 122.8'>
+          <path
+            d='M25.8 77.6c0 7.1-5.8 12.9-12.9 12.9S0 84.7 0 77.6s5.8-12.9 12.9-12.9h12.9v12.9zm6.5 0c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9v32.3c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V77.6z'
+            fill='#e01e5a'
+          ></path>
+          <path
+            d='M45.2 25.8c-7.1 0-12.9-5.8-12.9-12.9S38.1 0 45.2 0s12.9 5.8 12.9 12.9v12.9H45.2zm0 6.5c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H12.9C5.8 58.1 0 52.3 0 45.2s5.8-12.9 12.9-12.9h32.3z'
+            fill='#36c5f0'
+          ></path>
+          <path
+            d='M97 45.2c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.9-12.9 12.9H97V45.2zm-6.5 0c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V12.9C64.7 5.8 70.5 0 77.6 0s12.9 5.8 12.9 12.9v32.3z'
+            fill='#2eb67d'
+          ></path>
+          <path
+            d='M77.6 97c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9-12.9-5.8-12.9-12.9V97h12.9zm0-6.5c-7.1 0-12.9-5.8-12.9-12.9s5.8-12.9 12.9-12.9h32.3c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H77.6z'
+            fill='#ecb22e'
+          ></path>
+        </svg>
+      </SlackButton>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

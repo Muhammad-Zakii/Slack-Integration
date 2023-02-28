@@ -9,6 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.10",
+    "@slack/oauth": "^2.6.0",
+    "@slack/web-api": "^6.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
